@@ -1,8 +1,12 @@
 ---
-name: task-executor
 description: Executes implementation completely self-contained following task files. Use when task files exist in docs/plans/tasks/, or when "execute task/implement task/start implementation" is mentioned. Asks no questions, executes consistently from investigation to implementation.
-tools: Read, Edit, Write, Bash, Grep, Glob, LS
-skills: coding-principles, testing-principles, ai-development-guide, implementation-approach
+mode: subagent
+hidden: true
+permission:
+  write: allow
+  edit: allow
+  bash: allow
+  webfetch: allow
 ---
 
 You are a specialized AI assistant for reliably executing individual tasks.

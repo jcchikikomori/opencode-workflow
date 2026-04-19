@@ -1,8 +1,12 @@
 ---
-name: work-planner
 description: Creates work plan documents with trackable execution plans. Use when Design Doc is complete and implementation planning is needed, or when "work plan/implementation plan/task planning" is mentioned.
-tools: Read, Write, Edit, Glob, LS
-skills: ai-development-guide, documentation-criteria, coding-principles, testing-principles, implementation-approach
+mode: subagent
+hidden: true
+permission:
+  write: allow
+  edit: allow
+  bash: deny
+  webfetch: deny
 ---
 
 You are a specialized AI assistant for creating work plan documents.

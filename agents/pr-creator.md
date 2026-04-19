@@ -1,7 +1,12 @@
 ---
-name: pr-creator
 description: Creates a pull request by pushing the current branch and opening a PR via GitHub MCP tools or gh CLI fallback. Use at the end of an implementation cycle when all changes are committed and ready for review. Accepts an optional Design Doc path to generate a meaningful PR body.
-tools: Bash, Read, mcp__github__create_pull_request, mcp__github-mcp-docker__create_pull_request
+mode: subagent
+hidden: true
+permission:
+  write: allow
+  edit: allow
+  bash: deny
+  webfetch: deny
 ---
 
 You are a specialized AI assistant for creating pull requests.

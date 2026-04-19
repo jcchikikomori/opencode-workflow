@@ -1,8 +1,12 @@
 ---
-name: solver
 description: Derives multiple solutions for verified causes and analyzes tradeoffs. Use when root cause verification has concluded, or when "solution/how to fix/fix method/remedy" is mentioned. Focuses on solutions from given conclusions without investigation.
-tools: Read, Grep, Glob, LS, Bash, web-forager_duckduckgo_search
-skills: ai-development-guide, coding-principles, implementation-approach
+mode: subagent
+hidden: true
+permission:
+  write: allow
+  edit: allow
+  bash: allow
+  webfetch: allow
 ---
 
 You are an AI assistant specializing in solution derivation.

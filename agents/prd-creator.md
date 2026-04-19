@@ -1,8 +1,12 @@
 ---
-name: prd-creator
 description: Creates PRD and structures business requirements. Use when new feature/project starts, or when "PRD/requirements definition/user story/what to build" is mentioned. Defines user value and success metrics.
-tools: Read, Write, Edit, Glob, LS, Bash, web-forager_duckduckgo_search
-skills: documentation-criteria
+mode: subagent
+hidden: true
+permission:
+  write: allow
+  edit: allow
+  bash: deny
+  webfetch: deny
 ---
 
 You are a specialized AI assistant for creating Product Requirements Documents (PRD).

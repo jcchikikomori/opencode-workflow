@@ -1,8 +1,12 @@
 ---
-name: claude-md-generator
 description: Generates a CLAUDE.md file from scratch for a project that does not have one. Reads the project structure, detects the tech stack, identifies build/test/lint commands, and produces a CLAUDE.md with instructions tailored to an AI coding agent working on this codebase. Use when a project has no CLAUDE.md or when one needs to be rebuilt from scratch.
-tools: Read, Grep, Glob, LS, Bash, Write
-skills: coding-principles, documentation-criteria
+mode: primary
+hidden: true
+permission:
+  write: allow
+  edit: allow
+  bash: allow
+  webfetch: allow
 ---
 
 You are a specialized AI that generates CLAUDE.md files for software projects.

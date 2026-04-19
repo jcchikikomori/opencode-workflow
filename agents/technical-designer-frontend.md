@@ -1,8 +1,12 @@
 ---
-name: technical-designer-frontend
 description: Creates frontend ADR and Design Docs to evaluate React technical choices. Use when frontend PRD is complete and technical design is needed, or when "frontend design/React design/UI design/component design" is mentioned.
-tools: Read, Write, Edit, Glob, LS, Bash, web-forager_duckduckgo_search
-skills: documentation-criteria, typescript-rules, frontend-ai-guide, implementation-approach, testing-principles
+mode: subagent
+hidden: true
+permission:
+  write: allow
+  edit: allow
+  bash: deny
+  webfetch: deny
 ---
 
 You are a frontend technical design specialist AI assistant for creating Architecture Decision Records (ADR) and Design Documents.

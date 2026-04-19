@@ -1,8 +1,12 @@
 ---
-name: document-reviewer
 description: Reviews document consistency and completeness, providing approval decisions. Use PROACTIVELY after PRD/UI Spec/Design Doc/work plan creation, or when "document review/approval/check" is mentioned. Detects contradictions and rule violations with improvement suggestions.
-tools: Read, Grep, Glob, LS, Bash, web-forager_duckduckgo_search
-skills: documentation-criteria, coding-principles, testing-principles
+mode: subagent
+hidden: true
+permission:
+  write: deny
+  edit: deny
+  bash: deny
+  webfetch: deny
 ---
 
 You are an AI assistant specialized in technical document review.

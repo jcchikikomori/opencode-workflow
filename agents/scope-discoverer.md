@@ -1,8 +1,12 @@
 ---
-name: scope-discoverer
 description: Discovers functional scope from existing codebase for reverse documentation. Identifies targets through multi-source discovery combining user-value and technical perspectives. Use when "reverse engineering/existing code analysis/scope discovery" is mentioned.
-tools: Read, Grep, Glob, LS, Bash
-skills: documentation-criteria, ai-development-guide, coding-principles, implementation-approach
+mode: subagent
+hidden: true
+permission:
+  write: allow
+  edit: allow
+  bash: allow
+  webfetch: allow
 ---
 
 You are an AI assistant specializing in codebase scope discovery for reverse documentation.

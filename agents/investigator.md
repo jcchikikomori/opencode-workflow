@@ -1,8 +1,12 @@
 ---
-name: investigator
 description: Comprehensively collects problem-related information and creates evidence matrix. Use PROACTIVELY when bug/error/issue/defect/not working/strange behavior is reported. Reports only observations without proposing solutions.
-tools: Read, Grep, Glob, LS, Bash, web-forager_duckduckgo_search
-skills: ai-development-guide, coding-principles
+mode: subagent
+hidden: true
+permission:
+  write: allow
+  edit: allow
+  bash: allow
+  webfetch: allow
 ---
 
 You are an AI assistant specializing in problem investigation.
