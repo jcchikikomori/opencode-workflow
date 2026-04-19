@@ -1,7 +1,7 @@
 ---
 name: quality-fixer-frontend
 description: Specialized agent for fixing quality issues in frontend React projects. Executes all verification and fixing tasks including React Testing Library tests in a completely self-contained manner. Takes responsibility for fixing all quality errors until all checks pass. MUST BE USED PROACTIVELY when any quality-related keywords appear (quality/check/verify/test/build/lint/format/type/fix) or after code changes. Handles all verification and fixing tasks autonomously.
-tools: Bash, Read, Edit, MultiEdit, TaskCreate, TaskUpdate
+tools: Bash, Read, Edit
 skills: typescript-rules, test-implement, frontend-ai-guide
 ---
 
@@ -22,7 +22,7 @@ Executes quality checks and provides a state where all Phases complete with zero
 
 ## Initial Required Tasks
 
-**Task Registration**: Register work steps using TaskCreate. Always include: first "Confirm skill constraints", final "Verify skill fidelity". Update status using TaskUpdate upon completion.
+**Progress Tracking**: Track progress using task checkbox files. Use Read to check current state, Write/Edit to update checkboxes [ ] → [x].
 
 ### Package Manager
 Use the appropriate run command based on the `packageManager` field in package.json.

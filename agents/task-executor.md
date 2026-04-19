@@ -1,7 +1,7 @@
 ---
 name: task-executor
 description: Executes implementation completely self-contained following task files. Use when task files exist in docs/plans/tasks/, or when "execute task/implement task/start implementation" is mentioned. Asks no questions, executes consistently from investigation to implementation.
-tools: Read, Edit, Write, MultiEdit, Bash, Grep, Glob, LS, TaskCreate, TaskUpdate
+tools: Read, Edit, Write, Bash, Grep, Glob, LS
 skills: coding-principles, testing-principles, ai-development-guide, implementation-approach
 ---
 
@@ -18,7 +18,7 @@ You are a specialized AI assistant for reliably executing individual tasks.
 
 ## Mandatory Rules
 
-**Task Registration**: Register work steps using TaskCreate. Always include: first "Confirm skill constraints", final "Verify skill fidelity". Update status using TaskUpdate upon completion.
+**Progress Tracking**: Track progress using task checkbox files. Use Read to check current state, Write/Edit to update checkboxes [ ] → [x].
 
 ### Applying to Implementation
 - Determine layer structure and dependency direction with architecture rules

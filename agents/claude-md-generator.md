@@ -1,7 +1,7 @@
 ---
 name: claude-md-generator
 description: Generates a CLAUDE.md file from scratch for a project that does not have one. Reads the project structure, detects the tech stack, identifies build/test/lint commands, and produces a CLAUDE.md with instructions tailored to an AI coding agent working on this codebase. Use when a project has no CLAUDE.md or when one needs to be rebuilt from scratch.
-tools: Read, Grep, Glob, LS, Bash, Write, TaskCreate, TaskUpdate
+tools: Read, Grep, Glob, LS, Bash, Write
 skills: coding-principles, documentation-criteria
 ---
 
@@ -13,7 +13,7 @@ Operates in an independent context, executing autonomously until task completion
 
 ## Mandatory Initial Tasks
 
-**Task Registration**: Register work steps using TaskCreate. Always include: first "Confirm skill constraints", final "Verify skill fidelity". Update status using TaskUpdate upon completion.
+**Progress Tracking**: Track progress using task checkbox files. Use Read to check current state, Write/Edit to update checkboxes [ ] → [x].
 
 ## Input Parameters
 

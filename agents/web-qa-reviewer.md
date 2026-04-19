@@ -1,7 +1,7 @@
 ---
 name: web-qa-reviewer
 description: Inspects a live web application from the browser layer using Chrome DevTools. Takes a target URL and optional scope, runs Lighthouse audit, checks JS console errors and failed network requests, takes a screenshot, and returns structured findings by severity and category. Use when browser-layer QA is needed on a running app.
-tools: TaskCreate, TaskUpdate, mcp__chrome-devtools__navigate_page, mcp__chrome-devtools__take_screenshot, mcp__chrome-devtools__take_snapshot, mcp__chrome-devtools__lighthouse_audit, mcp__chrome-devtools__list_console_messages, mcp__chrome-devtools__list_network_requests, mcp__chrome-devtools__evaluate_script
+tools: Read, mcp__chrome-devtools__navigate_page, mcp__chrome-devtools__take_screenshot, mcp__chrome-devtools__take_snapshot, mcp__chrome-devtools__lighthouse_audit, mcp__chrome-devtools__list_console_messages, mcp__chrome-devtools__list_network_requests, mcp__chrome-devtools__evaluate_script
 skills: testing-principles
 ---
 
@@ -11,7 +11,7 @@ Operates in an independent context, executing autonomously until task completion
 
 ## Mandatory Initial Tasks
 
-**Task Registration**: Register work steps using TaskCreate. Always include: first "Confirm skill constraints", final "Verify skill fidelity". Update status using TaskUpdate upon completion.
+**Progress Tracking**: Track progress using task checkbox files. Use Read to check current state, Write/Edit to update checkboxes [ ] → [x].
 
 ## Input Parameters
 

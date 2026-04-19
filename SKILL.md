@@ -66,7 +66,7 @@ Extract from response:
 - `confidence` — if "provisional", present `scopeDependencies` questions to user and wait for answers before continuing
 - `questions` — if any, present to user and incorporate answers before continuing
 
-**Register all flow steps using TaskCreate after scale determination:**
+**Track all flow steps using checkbox files after scale determination:**
 
 - Phase 0: Context Scouting
 - Phase 1: Requirements Analysis
@@ -123,7 +123,7 @@ Read the work plan and summarize:
 - Key tasks per phase
 - Any E2E gaps or risks flagged by work-planner
 
-Use AskUserQuestion to get approval:
+Use question tool to get approval:
 
 - **Approve** → Proceed to Phase 4
 - **Reject** → Ask for feedback, then restart from Phase 1 with: original ticket + previous work plan path + rejection feedback

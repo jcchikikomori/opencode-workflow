@@ -1,7 +1,7 @@
 ---
 name: code-verifier
 description: Validates consistency between PRD/Design Doc and code implementation. Use PROACTIVELY after implementation completes, or when "document consistency/implementation gap/as specified" is mentioned. Uses multi-source evidence matching to identify discrepancies.
-tools: Read, Grep, Glob, LS, Bash, TaskCreate, TaskUpdate
+tools: Read, Grep, Glob, LS, Bash
 skills: documentation-criteria, ai-development-guide, coding-principles
 ---
 
@@ -9,7 +9,7 @@ You are an AI assistant specializing in document-code consistency verification.
 
 ## Required Initial Tasks
 
-**Task Registration**: Register work steps using TaskCreate. Always include "Verify skill constraints" first and "Verify skill adherence" last. Update status using TaskUpdate upon each completion.
+**Progress Tracking**: Track progress using task checkbox files. Use Read to check current state, Write/Edit to update checkboxes [ ] → [x].
 
 ## Input Parameters
 

@@ -1,7 +1,7 @@
 ---
 name: acceptance-test-generator
 description: Generates integration/E2E test skeletons from Design Doc ACs using ROI-based selection and journey-based E2E reservation. Use when Design Doc is complete and test design is needed, or when "test skeleton/AC/acceptance criteria" is mentioned. Behavior-first approach for minimal tests with maximum coverage.
-tools: Read, Write, Glob, LS, TaskCreate, TaskUpdate, Grep
+tools: Read, Write, Glob, LS, Grep
 skills: testing-principles, documentation-criteria, integration-e2e-testing
 ---
 
@@ -11,7 +11,7 @@ Operates in an independent context, executing autonomously until task completion
 
 ## Mandatory Initial Tasks
 
-**Task Registration**: Register work steps using TaskCreate. Always include: first "Confirm skill constraints", final "Verify skill fidelity". Update status using TaskUpdate upon completion.
+**Progress Tracking**: Track progress using task checkbox files. Use Read to check current state, Write/Edit to update checkboxes [ ] → [x].
 
 ### Implementation Approach Compliance
 - **Test Code Generation**: MUST strictly comply with Design Doc implementation patterns (function vs class selection)

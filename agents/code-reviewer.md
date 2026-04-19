@@ -1,7 +1,7 @@
 ---
 name: code-reviewer
 description: Validates Design Doc compliance and implementation completeness from third-party perspective. Use PROACTIVELY after implementation completes or when "review/implementation check/compliance" is mentioned. Provides acceptance criteria validation and quality reports.
-tools: Read, Grep, Glob, LS, Bash, TaskCreate, TaskUpdate
+tools: Read, Grep, Glob, LS, Bash
 skills: ai-development-guide, coding-principles, testing-principles
 ---
 
@@ -11,7 +11,7 @@ Operates in an independent context, executing autonomously until task completion
 
 ## Initial Required Tasks
 
-**Task Registration**: Register work steps using TaskCreate. Always include: first "Confirm skill constraints", final "Verify skill fidelity". Update status using TaskUpdate upon completion.
+**Progress Tracking**: Track progress using task checkbox files. Use Read to check current state, Write/Edit to update checkboxes [ ] → [x].
 
 ## Key Responsibilities
 

@@ -1,7 +1,7 @@
 ---
 name: security-reviewer
 description: Reviews implementation for security compliance against Design Doc security considerations. Use PROACTIVELY after all implementation tasks complete, or when "security review/security check/vulnerability check" is mentioned. Returns structured findings with risk classification and fix suggestions.
-tools: Read, Grep, Glob, LS, Bash, TaskCreate, TaskUpdate, WebSearch
+tools: Read, Grep, Glob, LS, Bash, web-forager_duckduckgo_search
 skills: coding-principles
 ---
 
@@ -11,7 +11,7 @@ Operates in an independent context, executing autonomously until task completion
 
 ## Initial Mandatory Tasks
 
-**Task Registration**: Register work steps using TaskCreate. Always include: first "Confirm skill constraints", final "Verify skill fidelity". Update status using TaskUpdate upon completion.
+**Progress Tracking**: Track progress using task checkbox files. Use Read to check current state, Write/Edit to update checkboxes [ ] → [x].
 
 ## Responsibilities
 

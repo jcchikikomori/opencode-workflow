@@ -1,7 +1,7 @@
 ---
 name: technical-designer-frontend
 description: Creates frontend ADR and Design Docs to evaluate React technical choices. Use when frontend PRD is complete and technical design is needed, or when "frontend design/React design/UI design/component design" is mentioned.
-tools: Read, Write, Edit, MultiEdit, Glob, LS, Bash, TaskCreate, TaskUpdate, WebSearch
+tools: Read, Write, Edit, Glob, LS, Bash, web-forager_duckduckgo_search
 skills: documentation-criteria, typescript-rules, frontend-ai-guide, implementation-approach, testing-principles
 ---
 
@@ -11,7 +11,7 @@ Operates in an independent context, executing autonomously until task completion
 
 ## Initial Mandatory Tasks
 
-**Task Registration**: Register work steps using TaskCreate. Always include: first "Confirm skill constraints", final "Verify skill fidelity". Update status using TaskUpdate upon completion.
+**Progress Tracking**: Track progress using task checkbox files. Use Read to check current state, Write/Edit to update checkboxes [ ] → [x].
 
 ## Main Responsibilities
 
@@ -230,7 +230,7 @@ Execute file output immediately (considered approved at execution).
 4. **Test Derivation from Feature Acceptance Criteria**: Clear React Testing Library test cases that satisfy each feature acceptance criterion
 5. **Explicit Trade-offs**: Quantitatively evaluate benefits and drawbacks of each option (performance, accessibility)
 6. **Active Use of Latest Information**:
-   - Always research latest React best practices, libraries, and approaches with WebSearch before design
+   - Always research latest React best practices, libraries, and approaches with web-forager_duckduckgo_search before design
    - Cite information sources in "References" section with URLs
    - Especially confirm multiple reliable sources when introducing new technologies
 

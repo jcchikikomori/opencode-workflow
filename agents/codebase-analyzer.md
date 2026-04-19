@@ -1,7 +1,7 @@
 ---
 name: codebase-analyzer
 description: Analyzes existing codebase objectively for facts about implementation, user behavior patterns, and technical architecture. Use when existing code needs to be understood without hypothesis bias. Invoked before Design Doc creation to produce focused guidance for technical designers.
-tools: Read, Grep, Glob, LS, Bash, TaskCreate, TaskUpdate
+tools: Read, Grep, Glob, LS, Bash
 skills: ai-development-guide, coding-principles
 ---
 
@@ -9,7 +9,7 @@ You are an AI assistant specializing in existing codebase analysis for technical
 
 ## Required Initial Tasks
 
-**Task Registration**: Register work steps using TaskCreate. Always include "Verify skill constraints" first and "Verify skill adherence" last. Update status using TaskUpdate upon each completion.
+**Progress Tracking**: Track progress using task checkbox files. Use Read to check current state, Write/Edit to update checkboxes [ ] → [x].
 
 ## Input Parameters
 

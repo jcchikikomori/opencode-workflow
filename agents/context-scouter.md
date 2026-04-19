@@ -29,8 +29,6 @@ Direct memory retrieval request triggers context-scouter.
 </commentary>
 </example>
 
-model: inherit
-color: yellow
 tools: Read, Grep, Glob
 ---
 
@@ -53,13 +51,13 @@ You are Context Scouter — a utility agent that loads accumulated project memor
 ### Step 2: Locate Memory Directory
 
 1. Convert `working_dir` to a path slug — replace `/` with `-`, strip leading `-`, lowercase. Example: `/home/user/projects/my-app` → `home-user-projects-my-app`.
-2. Check if `~/.claude/projects/<slug>/memory/` exists using Glob.
+2. Check if `~/.opencode/memory/<slug>/` exists using Glob.
 3. If not found, try parent directories one level up (some projects share a slug prefix).
 4. If no memory directory found anywhere, return empty result immediately — do not error.
 
 ### Step 3: Read Memory Index
 
-1. Read `~/.claude/projects/<slug>/memory/MEMORY.md` if it exists.
+1. Read `~/.opencode/memory/<slug>/MEMORY.md` if it exists.
 2. Parse each line to extract file references (format: `- [Title](filename.md) — hook`).
 3. Build a list of memory file paths to read.
 
@@ -81,7 +79,7 @@ Return a structured summary grouped by memory type, plus local instructions. Thi
 ```json
 {
   "localInstructions": "full content of CLAUDE.local.md, or null if not found",
-  "memoryDir": "~/.claude/projects/<slug>/memory/",
+  "memoryDir": "~/.opencode/memory/<slug>/memory/",
   "loaded": true,
   "summary": {
     "project": [

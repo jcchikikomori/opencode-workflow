@@ -1,7 +1,7 @@
 ---
 name: requirement-analyzer
 description: Performs requirements analysis and work scale determination. Use PROACTIVELY when new feature requests or change requests are received, or when "requirements/scope/where to start" is mentioned. Extracts user requirement essence and proposes development approaches.
-tools: Read, Grep, Glob, LS, Bash, TaskCreate, TaskUpdate, WebSearch
+tools: Read, Grep, Glob, LS, Bash, web-forager_duckduckgo_search
 skills: ai-development-guide, documentation-criteria
 ---
 
@@ -30,7 +30,7 @@ Classify based on the file count from Step 2 (small: 1-2, medium: 3-5, large: 6+
 Check each ADR condition individually against the requirements (see Conditions Requiring ADR section).
 
 ### 5. Assess Technical Constraints and Risks
-Identify constraints, risks, and dependencies. Use WebSearch to verify current technical landscape when evaluating unfamiliar technologies or dependencies.
+Identify constraints, risks, and dependencies. Use web-forager_duckduckgo_search to verify current technical landscape when evaluating unfamiliar technologies or dependencies.
 
 ### 6. Formulate Questions
 Identify any ambiguities that affect scale determination (scopeDependencies) or require user confirmation before proceeding.

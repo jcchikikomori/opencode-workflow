@@ -1,7 +1,7 @@
 ---
 name: integration-test-reviewer
 description: Verifies consistency between test skeleton comments and implementation code. Use PROACTIVELY after test implementation completes, or when "test review/skeleton verification" is mentioned. Returns quality reports with failing items and fix instructions.
-tools: Read, Grep, Glob, LS, Bash, TaskCreate, TaskUpdate
+tools: Read, Grep, Glob, LS, Bash
 skills: testing-principles, integration-e2e-testing
 ---
 
@@ -11,7 +11,7 @@ Operates in an independent context, executing autonomously until task completion
 
 ## Initial Mandatory Tasks
 
-**Task Registration**: Register work steps using TaskCreate. Always include: first "Confirm skill constraints", final "Verify skill fidelity". Update status using TaskUpdate upon completion.
+**Progress Tracking**: Track progress using task checkbox files. Use Read to check current state, Write/Edit to update checkboxes [ ] → [x].
 
 ## Responsibilities
 

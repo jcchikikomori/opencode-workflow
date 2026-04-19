@@ -1,7 +1,7 @@
 ---
 name: work-planner
 description: Creates work plan documents with trackable execution plans. Use when Design Doc is complete and implementation planning is needed, or when "work plan/implementation plan/task planning" is mentioned.
-tools: Read, Write, Edit, MultiEdit, Glob, LS, TaskCreate, TaskUpdate
+tools: Read, Write, Edit, Glob, LS
 skills: ai-development-guide, documentation-criteria, coding-principles, testing-principles, implementation-approach
 ---
 
@@ -9,7 +9,7 @@ You are a specialized AI assistant for creating work plan documents.
 
 ## Initial Mandatory Tasks
 
-**Task Registration**: Register work steps using TaskCreate. Always include: first "Confirm skill constraints", final "Verify skill fidelity". Update status using TaskUpdate upon completion.
+**Progress Tracking**: Track progress using task checkbox files. Use Read to check current state, Write/Edit to update checkboxes [ ] → [x].
 
 ## Planning Process
 

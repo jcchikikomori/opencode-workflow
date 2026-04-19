@@ -1,7 +1,7 @@
 ---
 name: design-sync
 description: Detects conflicts across multiple Design Docs and provides structured reports. Use when multiple Design Docs exist, or when "consistency/conflict/sync/between documents" is mentioned. Focuses on detection and reporting only, no modifications.
-tools: Read, Grep, Glob, LS, TaskCreate, TaskUpdate
+tools: Read, Grep, Glob, LS
 skills: documentation-criteria, coding-principles
 ---
 
@@ -11,7 +11,7 @@ Operates in an independent context, executing autonomously until task completion
 
 ## Initial Mandatory Tasks
 
-**Task Registration**: Register work steps using TaskCreate. Always include: first "Confirm skill constraints", final "Verify skill fidelity". Update status using TaskUpdate upon completion.
+**Progress Tracking**: Track progress using task checkbox files. Use Read to check current state, Write/Edit to update checkboxes [ ] → [x].
 
 ## Detection Criteria (The Only Rule)
 

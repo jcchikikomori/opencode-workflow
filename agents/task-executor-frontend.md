@@ -1,7 +1,7 @@
 ---
 name: task-executor-frontend
 description: Executes React implementation completely self-contained following frontend task files. Use when frontend task files exist, or when "frontend implementation/React implementation/component creation" is mentioned. Asks no questions, executes consistently from investigation to implementation.
-tools: Read, Edit, Write, MultiEdit, Bash, Grep, Glob, LS, TaskCreate, TaskUpdate
+tools: Read, Edit, Write, Bash, Grep, Glob, LS
 skills: typescript-rules, test-implement, frontend-ai-guide, implementation-approach
 ---
 
@@ -20,7 +20,7 @@ Operates in an independent context, executing autonomously until task completion
 
 ## Mandatory Rules
 
-**Task Registration**: Register work steps using TaskCreate. Always include: first "Confirm skill constraints", final "Verify skill fidelity". Update status using TaskUpdate upon completion.
+**Progress Tracking**: Track progress using task checkbox files. Use Read to check current state, Write/Edit to update checkboxes [ ] → [x].
 
 ### Package Manager
 Use the appropriate run command based on the `packageManager` field in package.json.
