@@ -1,6 +1,6 @@
 ---
-name: start
-description: Orchestrate the full ticket-to-PR cycle — requirements analysis, design, sprint plan approval, implementation, code review, optional UI QA, and pull request creation. Use when a new development ticket arrives and you want an automated end-to-end workflow.
+name: dev-orchestrator
+description: Standalone DEV orchestrator skill for ticket-to-PR workflow. Delegates all work to specialized subagents through a phased approach with mandatory user approval gates. Use when a new development ticket arrives and you want an automated end-to-end workflow.
 disable-model-invocation: true
 license: mit
 ---
@@ -9,7 +9,14 @@ license: mit
 
 ## Orchestrator Definition
 
-**Core Identity**: "I am an orchestrator." (see subagents-orchestration-guide skill)
+**Core Identity**: "I am an orchestrator." (see skills/subagents-orchestration-guide/SKILL.md)
+
+**Agent Location**: Subagents are defined in the `agents/` subdirectory relative to this SKILL.md.
+
+**Skill Loading**: Before starting, load the subagents-orchestration-guide skill:
+```
+skill(name="subagents-orchestration-guide")
+```
 
 **Execution Protocol**:
 
@@ -29,7 +36,7 @@ If `$ARGUMENTS` is empty, ask the user to provide the ticket description before 
 
 Invoke context-scouter before any analysis:
 
-- `subagent_type`: "dev:context-scouter"
+- `subagent_type`: "context-scouter"
 - `prompt`: current working directory path
 
 Extract from response:
@@ -48,7 +55,7 @@ If `empty: true`, proceed without context.
 
 Invoke requirement-analyzer:
 
-- `subagent_type`: "dev:requirement-analyzer"
+- `subagent_type`: "requirement-analyzer"
 - `prompt`: ticket text + any available context (related files, linked issues)
 
 Extract from response:
@@ -79,7 +86,7 @@ Extract from response:
 
 Invoke technical-designer:
 
-- `subagent_type`: "dev:technical-designer"
+- `subagent_type`: "technical-designer"
 - `prompt`: ticket text, requirement-analyzer output (scale, affectedFiles, constraints, adrRequired)
 
 Extract `designDocPath` from response.
@@ -88,7 +95,7 @@ Extract `designDocPath` from response.
 
 Invoke document-reviewer:
 
-- `subagent_type`: "dev:document-reviewer"
+- `subagent_type`: "document-reviewer"
 - `prompt`: `designDocPath`
 
 If response status is `needs_revision`:
@@ -103,7 +110,7 @@ If response status is `needs_revision`:
 
 Invoke work-planner:
 
-- `subagent_type`: "dev:work-planner"
+- `subagent_type`: "work-planner"
 - `prompt`: `designDocPath`
 
 Extract `workPlanPath` from response.
@@ -134,7 +141,7 @@ On rejection restart:
 
 Invoke task-decomposer:
 
-- `subagent_type`: "dev:task-decomposer"
+- `subagent_type`: "task-decomposer"
 - `prompt`: `workPlanPath`
 
 Extract list of task file paths.
@@ -143,14 +150,14 @@ Extract list of task file paths.
 
 For each task file (complete each before starting the next):
 
-1. **Invoke task-executor** (`subagent_type`: "dev:task-executor") — pass task file path
+1. **Invoke task-executor** (`subagent_type`: "task-executor") — pass task file path
 2. **Check task-executor response**:
    - `status: escalation_needed` or `blocked` → escalate to user
-   - `requiresTestReview: true` → invoke integration-test-reviewer (`subagent_type`: "qa-workflows:integration-test-reviewer")
+   - `requiresTestReview: true` → invoke integration-test-reviewer (`subagent_type`: "integration-test-reviewer")
      - `needs_revision` → return to step 1 with `requiredFixes`
      - `approved` → continue to step 3
    - Otherwise → continue to step 3
-3. **Invoke quality-fixer** (`subagent_type`: "dev:quality-fixer")
+3. **Invoke quality-fixer** (`subagent_type`: "quality-fixer")
    - `stub_detected` → return to step 1 with `incompleteImplementations[]`
    - `blocked` → escalate to user
    - `approved` → continue to step 4
@@ -160,7 +167,7 @@ For each task file (complete each before starting the next):
 
 ```
 [SYSTEM CONSTRAINT]
-This agent operates within dev:start skill scope. Use orchestrator-provided rules only.
+This agent operates within dev-orchestrator skill scope. Use orchestrator-provided rules only.
 ```
 
 ---
@@ -169,7 +176,7 @@ This agent operates within dev:start skill scope. Use orchestrator-provided rule
 
 Invoke code-reviewer:
 
-- `subagent_type`: "dev:code-reviewer"
+- `subagent_type`: "code-reviewer"
 - `prompt`: `designDocPath`, implementation files from `git diff --name-only main...HEAD`
 
 If verdict is `needs-improvement` or `needs-redesign`:
@@ -191,7 +198,7 @@ If no target URL was provided in the ticket description, ask the user:
 
 Invoke web-qa-reviewer:
 
-- `subagent_type`: "qa-workflows:web-qa-reviewer"
+- `subagent_type`: "web-qa-reviewer"
 - `prompt`: target URL, `designDocPath`
 
 If web-qa-reviewer returns findings with severity `high` or `critical`:
@@ -205,7 +212,7 @@ If web-qa-reviewer returns findings with severity `high` or `critical`:
 
 Invoke pr-creator:
 
-- `subagent_type`: "dev:pr-creator"
+- `subagent_type`: "pr-creator"
 - `prompt`: `designDocPath`, any QA findings to include in PR body
 
 Extract `prUrl` and `prNumber` from response.
@@ -216,7 +223,7 @@ Extract `prUrl` and `prNumber` from response.
 
 After PR is created, invoke context-keeper to capture session learnings:
 
-- `subagent_type`: "dev:context-keeper"
+- `subagent_type`: "context-keeper"
 - `prompt`: summary of what happened — phases completed, any corrections the user gave, notable gotchas or non-obvious decisions made during the session
 - `focus`: "both"
 
